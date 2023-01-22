@@ -1,0 +1,9 @@
+{
+  "require": "ts-node/register",
+  "loader": "ts-node/esm",
+  "extensions": ["ts", "tsx"],
+  "spec": [
+    "./server/nodesrc/testing/mocha_test/test.ts"
+  ],
+  "ignore":"*node_modules*"
+}

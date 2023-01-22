@@ -1,0 +1,17 @@
+.dashboard-body{
+  width:90%;
+  height:100%;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  .varient-list-ct{
+    position:relative;
+    background: #e9d9c6;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    // border: 2px solid black;
+    width:90%;
+    height:250px;
+  }
+}

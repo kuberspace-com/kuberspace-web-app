@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    // "plugin:jsdoc/recommended"
+  ],
+  "env": {
+    "jest": true
+  },
+  "ignorePatterns": ["build"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint","jsdoc"],
+  "rules": {
+    "no-var":"off",
+    "no-console": 2,
+    "react/prefer-stateless-function":0,
+    "no-plusplus":0,
+    "react/prop-types":0,
+    "max-len":["error",{"code":120}],
+    "react/forbid-prop-types": [2, { "forbid": ["any"], "checkContextTypes": true, "checkChildContextTypes": true }],
+    "class-methods-use-this":"off",
+    "arrow-spacing":["error",{ "before": false, "after": true }],
+    "object-curly-spacing": ["error", "always", {
+      "arraysInObjects": false,
+      "objectsInObjects": false
+    }],
+    "react/destructuring-assignment": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "modifiers": ["const"],
+        "leadingUnderscore": "allow",
+        "format": ["UPPER_CASE"],
+        "trailingUnderscore": "allow"
+      }
+    ],
+    "camelcase":["error",{"properties":"always"}],
+    "comma-dangle": ["error", "never"],
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "semi": 2,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
+}

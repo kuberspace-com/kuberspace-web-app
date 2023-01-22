@@ -1,0 +1,116 @@
+
+.search_icon{
+  font-size: 2.5rem !important;
+}
+.MuiPaper-root {
+  // width:100%;
+  background:rgb(196,141,82,77%)!important;
+}
+.MuiDrawer-paperAnchorLeft{
+  position: relative!important;
+}
+.dashboard .root-MuiAppBar-root, .dahsboard .MuiPaper-root {
+  position: absolute!important;
+}
+
+
+
+.search_dropdown{
+  width:100%;
+  height:600px;
+  // background:orange;
+  position: absolute;
+  top:100%;
+  right:0px;
+}
+
+.catagories{
+  display:grid;
+  width:95%;
+  margin:0 auto;
+  justify-items: center;
+  height:auto;
+  grid-template-columns: repeat(2,1fr);
+  // grid-template-rows: repeat(2,minmax(200px,800px));
+  grid-gap:20px;
+  //boxshadow
+  // background:orange;
+  grid-auto-flow: dense;
+
+  .grid-item{
+    width:45vw;
+    height:45vw;
+    max-height: 300px;
+    max-width:300px;
+    cursor: grab;
+    &:hover{
+      filter: brightness(0.7);
+    }
+    // background:orange;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 50px;
+    background:#9B4830;
+    .icon{
+      width:100%;
+      height:100%;
+      color:white;
+    }
+    span{
+      color:black;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 500px){
+  .catagories{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (min-width: 900px){
+  .catagories{
+    grid-template-columns: repeat(3,1fr);
+    .grid-item{
+      width: calc(100vw  / 4);
+      height: calc(100vw / 4);
+
+    }
+  }
+}
+
+
+.dashboard{
+
+  position:relative!important;
+  z-index: 2!important;
+
+  .MuiSvgIcon-root{
+    font-size: 2rem;
+    // fill: white!important;
+    &:hover{
+      filter: brightness(0.7);
+    }
+  }
+
+
+background-color: white;
+.MuiDrawer-paperAnchorDockedLeft{
+  top:auto!important;
+  // width: 20%!important;
+}
+.MuiAppBar-root{
+  position: absolute!important;
+}
+
+.MuiPaper-root{
+  background-color: white;
+  top:auto!important;
+
+  // width: 50%!important;
+  display:block!important;
+  // background-color: transparent;
+}
+}
