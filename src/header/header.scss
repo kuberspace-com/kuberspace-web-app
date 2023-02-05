@@ -1,0 +1,18 @@
+.top-header {
+  top: 0px;
+  z-index: +1;
+}
+
+.search-bar{
+  width: 100%;
+  display: block;
+  padding: 15px;
+}
+.logoName{
+  margin-right:20px;
+}
+.search-button{
+  &:focus,&:hover{
+    svg{font-size:30px;}
+  }
+}

@@ -1,0 +1,101 @@
+.departments {
+  width: 95%;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+  grid-template-rows: repeat(auto-fill, minmax(150px, 200px));
+  grid-gap: 10px;
+  justify-content: space-around;
+  height: 100vh;
+  grid-row-gap: 80px;
+  overflow: scroll;
+}
+
+.department{
+  background:white;
+  // margin:5px;
+  cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  min-height: 150px;
+  padding:5px;
+  border: 0px solid transparent;
+  border-radius: 11px;
+  position: relative;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  &:hover,&:focus{
+    .overlay-dark{
+      background: rgba(0,0,0,0.5);
+    }
+    span{
+      font-size: 25px;
+    }
+  }
+  span{
+    color:white;
+    z-index: +2;
+    text-align: center;
+
+  }
+  .overlay-dark{
+    border-radius: 11px;
+  }
+}
+
+#department-science{
+  background-image: url('/assets/images/departments/science.png');
+}
+#department-toys-and-games{
+  background-image: url('/assets/images/departments/toys&games.png');
+}
+#department-appliances{
+  background-image: url('/assets/images/departments/appliances.png');
+}
+#department-arts-and-crafts{
+  background-image: url('/assets/images/departments/arts&crafts.png');
+}
+
+#department-baby{
+  background-image: url('/assets/images/departments/baby.png');
+}
+#department-beauty{
+  background-image: url('/assets/images/departments/beauty.png');
+}
+#department-books{
+  background-image: url('/assets/images/departments/books.png');
+}
+#department-music{
+  background-image: url('/assets/images/departments/music.png');
+}
+#department-electronics{
+  background-image: url('/assets/images/departments/electronics.png');
+}
+#department-clothing{
+  background-image: url('/assets/images/departments/clothing.png');
+}
+#department-garden-and-outdoor{
+  background-image: url('/assets/images/departments/garden&outdoor.png');
+}
+#department-home-and-kitchen{
+  background-image: url('/assets/images/departments/home&kitchen.png');
+}
+#department-video-games{
+  background-image: url('/assets/images/departments/video-games.png');
+}
+#department-tools{
+  background-image: url('/assets/images/departments/tools.png');
+}
+#department-pet{
+  background-image: url('/assets/images/departments/pet.png');
+}
+#department-office-products{
+  background-image: url('/assets/images/departments/office-products.png');
+}
+#department-antiques{
+  background-image: url('/assets/images/departments/antiques.png');
+}
