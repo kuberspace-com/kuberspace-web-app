@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.eefe0771.css",
-    "main.js": "/static/js/main.3288d0bc.js",
+    "main.css": "/static/css/main.e259e8cd.css",
+    "main.js": "/static/js/main.89178411.js",
+    "static/media/CharisSIL-Bold.ttf": "/static/media/CharisSIL-Bold.7af488456dee01497cac.ttf",
     "static/media/garden&outdoor.webp": "/static/media/garden&outdoor.26b1dcc61da44281a0b2.webp",
     "static/media/home&kitchen.webp": "/static/media/home&kitchen.269616aade472bb7885e.webp",
     "static/media/electronics.webp": "/static/media/electronics.6f1c6bf149339573d82e.webp",
@@ -12,7 +13,6 @@
     "static/media/clothing.webp": "/static/media/clothing.a558ab6248c5d585056e.webp",
     "static/media/books.webp": "/static/media/books.15178c5625d4872bca3c.webp",
     "static/media/office-products.webp": "/static/media/office-products.f63164ffeafdadc453cf.webp",
-    "static/media/fontawesome-webfont.woff2": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "static/media/video-games.webp": "/static/media/video-games.3dead798ec1e5709b746.webp",
     "static/media/pet.webp": "/static/media/pet.041a33983c3b915504ed.webp",
     "static/media/toys&games.webp": "/static/media/toys&games.d8a530999291cfa765b3.webp",
@@ -21,11 +21,11 @@
     "static/media/beauty.webp": "/static/media/beauty.2128bc1f02a27b4cda90.webp",
     "static/media/baby.webp": "/static/media/baby.3895083833d206490a55.webp",
     "index.html": "/index.html",
-    "main.eefe0771.css.map": "/static/css/main.eefe0771.css.map",
-    "main.3288d0bc.js.map": "/static/js/main.3288d0bc.js.map"
+    "main.e259e8cd.css.map": "/static/css/main.e259e8cd.css.map",
+    "main.89178411.js.map": "/static/js/main.89178411.js.map"
   },
   "entrypoints": [
-    "static/css/main.eefe0771.css",
-    "static/js/main.3288d0bc.js"
+    "static/css/main.e259e8cd.css",
+    "static/js/main.89178411.js"
   ]
 }
