@@ -1,0 +1,54 @@
+{
+  "keyWords":[
+    {
+      "stared": false,
+      "keyWord": "airpods",
+      "results": 200
+    },
+    {
+      "stared": true,
+      "keyWord": "apple watch",
+      "results": 100
+    },
+    {
+      "stared": false,
+      "keyWord": "air fryer",
+      "results": 457
+    },
+    {
+      "stared": true,
+      "keyWord": "airpods pro 2",
+      "results": 293
+    },
+    {
+      "stared": false,
+      "keyWord": "apple computer",
+      "results": 293
+    },
+    {
+      "stared": false,
+      "keyWord": "airpods copy",
+      "results": 200
+    },
+    {
+      "stared": true,
+      "keyWord": "apple watch copy",
+      "results": 100
+    },
+    {
+      "stared": false,
+      "keyWord": "air fryer copy",
+      "results": 457
+    },
+    {
+      "stared": true,
+      "keyWord": "airpods pro 2 copy",
+      "results": 293
+    },
+    {
+      "stared": false,
+      "keyWord": "apple computer copy",
+      "results": 293
+    }
+  ]
+}

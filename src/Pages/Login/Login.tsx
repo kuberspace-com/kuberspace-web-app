@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './login.scss';
 // import axios from 'axios';
 import { Button, Box } from '@mui/material';
@@ -8,11 +8,12 @@ import { FormGroup, FormControl } from '@kuberspace/kuberform';
 
 function Login() {
   var [errorMessage, setErrorMessage] = useState(null);
-  const NAVIGATE = useNavigate();
+  // const NAVIGATE = useNavigate();
   const REF = useRef(null);
 
   function submit() {
     // do nothing for now
+    setErrorMessage(null);
   }
 
   return (

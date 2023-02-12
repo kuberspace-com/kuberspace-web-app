@@ -10930,3 +10930,4 @@ function PeriodicTable() {
     </div>
   );
 }
+export default PeriodicTable;

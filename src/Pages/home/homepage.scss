@@ -8,8 +8,9 @@
 .MuiButton-root{
   margin:0px 0px!important;
   font-size: 20px!important;
-    font-weight: 800!important;
+  font-weight: 800!important;
 }
+
 .background-image{
   background-size: cover;
   background-position: center;
@@ -37,10 +38,9 @@
     border: 1px solid transparent;
     border-radius: 20px;
     padding: 11px;
-    font-family: "Charis SIL", serif;
   }
+
   span{
-    font-family: 'Charis SIL', serif;
     font-weight: 700;
     font-size: 20px;
     display: block;

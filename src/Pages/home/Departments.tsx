@@ -13,6 +13,7 @@ function Departments() {
     id: string;
     label: string;
   }
+
   const DEPARTMENTS: Array<Department> = [
     {
       route: 'science',
@@ -126,6 +127,7 @@ function Departments() {
             className="department"
             id={`department-${department.id}`}
           >
+            {/* need to switch from background image to img tag */}
             <div className="overlay-dark" />
             <span>{department.label}</span>
           </div>
