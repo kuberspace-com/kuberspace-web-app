@@ -1,4 +1,4 @@
-name: Kuberspace
+name: kuberspace-web-app
 
 on: [pull_request]
 
