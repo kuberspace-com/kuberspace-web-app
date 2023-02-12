@@ -15,6 +15,9 @@ jobs:
     - name: echo out pwd
       run: echo `pwd`
 
+    - name: ls
+      run: echo `ls`
+
     - name: install modules
       run: npm install
 
