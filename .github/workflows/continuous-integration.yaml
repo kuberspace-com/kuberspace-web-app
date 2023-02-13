@@ -12,12 +12,6 @@ jobs:
       with:
         node-version: '12.x'
 
-    - name: echo out pwd
-      run: echo `pwd`
-
-    - name: ls
-      run: echo `ls`
-
     - name: install modules
       run: npm install
 
