@@ -9,6 +9,7 @@
       "allowJs": true    ,
       "moduleResolution": "node",
       "esModuleInterop":true,
+      "resolveJsonModule":true,
       "plugins": [{ "name": "typescript-plugin-css-modules" }]
       // allow a partial TypeScript and JavaScript codebase
     },

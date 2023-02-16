@@ -1,4 +1,4 @@
-function createCookie(name, value, h) {
+function createCookie(name, value) {
   // eslint-disable-next-line no-undef
   document.cookie = `${name}=${value || ''};`;
 }

@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "scss/dollar-variable-pattern": null,
+    "block-no-empty": null,
+    "unit-allowed-list": ["em", "rem", "%", "s"],
+    "alpha-value-notation": ["percentage", { "exceptProperties": ["opacity"] }]
+  }
+}

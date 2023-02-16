@@ -1,0 +1,8 @@
+{
+  "testMatch": [
+    "**/src/*test.tsx"
+  ],
+  "testPathIgnorePatterns":[
+    "/node_modules/"
+  ]
+}

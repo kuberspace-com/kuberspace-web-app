@@ -46,5 +46,8 @@ function AUTH_PROVIDER(props: {children: any}) {
   );
 }
 
-const USE_AUTH: any = ()=> useContext(AUTH_CONTEXT);
+const USE_AUTH: ()=> {
+  isLoggedIn: boolean,
+  setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>
+} = ()=> useContext(AUTH_CONTEXT);
 export { AUTH_PROVIDER, USE_AUTH };
