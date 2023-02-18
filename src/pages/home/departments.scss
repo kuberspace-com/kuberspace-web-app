@@ -12,15 +12,15 @@
 }
 
 .department {
-  background:white;
+  background: white;
   cursor: pointer;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 20px;
   min-height: 150px;
-  padding:5px;
+  padding: 5px;
   border: 0 solid transparent;
   border-radius: 11px;
   position: relative;
@@ -33,7 +33,7 @@
   }
 
   span {
-    color:white;
+    color: white;
     z-index: +2;
     text-align: center;
   }

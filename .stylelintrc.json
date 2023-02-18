@@ -3,11 +3,18 @@
   "rules": {
     "scss/dollar-variable-pattern": null,
     "block-no-empty": null,
-    "unit-allowed-list": ["em", "rem", "%", "s"],
     "at-rule-name-space-after": "always",
     "no-extra-semicolons": true,
-    "no-empty-first-line": "always",
-    "indentation": "tab",
-    "alpha-value-notation": "number"
+    "no-empty-first-line": true,
+    "indentation": 2,
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "declaration-colon-space-after":"always",
+    "unit-allowed-list": ["px","em","rem","deg","%","vh","vw","s"],
+    "block-opening-brace-space-before": "always",
+    "declaration-block-no-redundant-longhand-properties":true,
+    "function-comma-space-after": "always",
+    "block-opening-brace-newline-after":"always",
+    "selector-class-pattern": "."
   }
 }
