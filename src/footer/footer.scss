@@ -1,18 +1,16 @@
 :root {
-  --white: #FFF;
+  --white: #fff;
   --black: #000;
-  --dark: #1E1E1E;
+  --dark: #1e1e1e;
   --gray: rgba(1, 1, 1, 0.6);
   --lite: rgba(255, 255, 255, 0.6);
   --primary: #002347;
   --secondary: #fdc632;
 }
 
-
 /***************************
           DEFAULT
 ****************************/
-
 
 a {
   text-decoration: none !important;
@@ -20,20 +18,31 @@ a {
   width: fit-content;
 }
 
-a, button {
+a,
+button {
   transition: 0.5s;
 }
 
-a, p {
+a,
+p {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--primary);
   font-weight: 600;
 }
 
-a, button, input, textarea, select {
+a,
+button,
+input,
+textarea,
+select {
   outline: none !important;
 }
 
@@ -45,7 +54,8 @@ fieldset {
   color: var(--primary);
 }
 
-.flex, .fixed_flex {
+.flex,
+.fixed_flex {
   display: flex;
 }
 
@@ -107,7 +117,10 @@ fieldset {
     flex-wrap: wrap;
   }
 
-  .padding_1x, .padding_2x, .padding_3x, .footer {
+  .padding_1x,
+  .padding_2x,
+  .padding_3x,
+  .footer {
     padding: 1rem;
   }
 
@@ -115,16 +128,16 @@ fieldset {
     padding: 0.5rem 1rem;
   }
 
-  a, p {
+  a,
+  p {
     font-size: 12px;
   }
 }
 
-
-
 /***************************
              FOOTER
 ****************************/
+
 footer {
   background-color: var(--primary);
   color: var(--lite);
@@ -139,10 +152,11 @@ footer {
     display: block;
     margin: 15px 0;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       font-size: 15px;
       color: white;
-      text-decoration: underline!important;
+      text-decoration: underline !important;
     }
   }
 
@@ -213,4 +227,3 @@ footer {
     flex: 1 1 100%;
   }
 }
-
