@@ -15,14 +15,14 @@ jobs:
     - name: install modules
       run: npm install
 
-    - name: build web app
-      run: npm run build
+    - name: run scss linter
+      run: npm run styleLinter; echo `cat /home/runner/.npm/_logs/*.log`
 
     - name: run js linter
       run: npm run linter
 
-    - name: run scss linter
-      run: npm run styleLinter
+    - name: build web app
+      run: npm run build
 
     - name: test the code
       run: npm test
