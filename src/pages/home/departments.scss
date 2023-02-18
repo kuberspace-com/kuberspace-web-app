@@ -11,91 +11,109 @@
   overflow: scroll;
 }
 
-.department{
-  background:white;
-  // margin:5px;
+.department {
+  background: white;
   cursor: pointer;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 20px;
   min-height: 150px;
-  padding:5px;
-  border: 0px solid transparent;
+  padding: 5px;
+  border: 0 solid transparent;
   border-radius: 11px;
   position: relative;
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
-  &:hover,&:focus{
-    .overlay-dark{
-      background: rgba(0,0,0,0.5);
+
+  .overlay-dark {
+    border-radius: 11px;
+  }
+
+  span {
+    color: white;
+    z-index: +2;
+    text-align: center;
+  }
+
+  &:hover,
+  &:focus {
+    .overlay-dark {
+      background: rgba(0, 0, 0, 0.5);
     }
-    span{
+
+    span {
       font-size: 25px;
     }
   }
-  span{
-    color:white;
-    z-index: +2;
-    text-align: center;
-
-  }
-  .overlay-dark{
-    border-radius: 11px;
-  }
 }
 
-#department-science{
-  background-image: url('/assets/images/departments/science.webp');
-}
-#department-toys-and-games{
-  background-image: url('/assets/images/departments/toys&games.webp');
-}
-#department-appliances{
-  background-image: url('/assets/images/departments/appliances.webp');
-}
-#department-arts-and-crafts{
-  background-image: url('/assets/images/departments/arts&crafts.webp');
+#department-science {
+  background-image: url("/assets/images/departments/science.webp");
 }
 
-#department-baby{
-  background-image: url('/assets/images/departments/baby.webp');
+#department-toys-and-games {
+  background-image: url("/assets/images/departments/toys&games.webp");
 }
-#department-beauty{
-  background-image: url('/assets/images/departments/beauty.webp');
+
+#department-appliances {
+  background-image: url("/assets/images/departments/appliances.webp");
 }
-#department-books{
-  background-image: url('/assets/images/departments/books.webp');
+
+#department-arts-and-crafts {
+  background-image: url("/assets/images/departments/arts&crafts.webp");
 }
-#department-music{
-  background-image: url('/assets/images/departments/music.webp');
+
+#department-baby {
+  background-image: url("/assets/images/departments/baby.webp");
 }
-#department-electronics{
-  background-image: url('/assets/images/departments/electronics.webp');
+
+#department-beauty {
+  background-image: url("/assets/images/departments/beauty.webp");
 }
-#department-clothing{
-  background-image: url('/assets/images/departments/clothing.webp');
+
+#department-books {
+  background-image: url("/assets/images/departments/books.webp");
 }
-#department-garden-and-outdoor{
-  background-image: url('/assets/images/departments/garden&outdoor.webp');
+
+#department-music {
+  background-image: url("/assets/images/departments/music.webp");
 }
-#department-home-and-kitchen{
-  background-image: url('/assets/images/departments/home&kitchen.webp');
+
+#department-electronics {
+  background-image: url("/assets/images/departments/electronics.webp");
 }
-#department-video-games{
-  background-image: url('/assets/images/departments/video-games.webp');
+
+#department-clothing {
+  background-image: url("/assets/images/departments/clothing.webp");
 }
-#department-tools{
-  background-image: url('/assets/images/departments/tools.webp');
+
+#department-garden-and-outdoor {
+  background-image: url("/assets/images/departments/garden&outdoor.webp");
 }
-#department-pet{
-  background-image: url('/assets/images/departments/pet.webp');
+
+#department-home-and-kitchen {
+  background-image: url("/assets/images/departments/home&kitchen.webp");
 }
-#department-office-products{
-  background-image: url('/assets/images/departments/office-products.webp');
+
+#department-video-games {
+  background-image: url("/assets/images/departments/video-games.webp");
 }
-#department-antiques{
-  background-image: url('/assets/images/departments/antiques.webp');
+
+#department-tools {
+  background-image: url("/assets/images/departments/tools.webp");
+}
+
+#department-pet {
+  background-image: url("/assets/images/departments/pet.webp");
+}
+
+#department-office-products {
+  background-image: url("/assets/images/departments/office-products.webp");
+}
+
+#department-antiques {
+  background-image: url("/assets/images/departments/antiques.webp");
 }
