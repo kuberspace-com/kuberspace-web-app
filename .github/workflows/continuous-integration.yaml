@@ -18,8 +18,11 @@ jobs:
     - name: build web app
       run: npm run build
 
-    - name: run linter
+    - name: run js linter
       run: npm run linter
+
+    - name: run scss linter
+      run: npm run styleLinter
 
     - name: test the code
       run: npm test

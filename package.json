@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "linter": "eslint .",
-    "cssLinter": "npx stylelint **/*.scss",
+    "styleLinter": "npx stylelint **/*.scss",
     "compileTypeScript": "npx tsc",
     "test": "jest"
   },
