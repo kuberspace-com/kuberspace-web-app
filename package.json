@@ -80,8 +80,6 @@
     "sass": "^1.52.3",
     "stylelint": "^15.1.0",
     "stylelint-config-recommended-scss": "^9.0.1",
-    "stylelint-config-standard": "^30.0.1",
-    "stylelint-config-standard-scss": "^7.0.0",
     "stylelint-prettier": "^2.0.0"
   }
 }
