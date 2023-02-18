@@ -13,9 +13,7 @@
     "scss/dollar-variable-colon-space-after": "always",
     "scss/dollar-variable-colon-space-before": "never",
     "unit-allowed-list": ["px","vmin","em","rem","deg","%","vh","vw","s"],
-    "declaration-block-no-redundant-longhand-properties":[true, {
-      "severity": "warning"
-    }],
+    "declaration-block-no-redundant-longhand-properties":true,
     "selector-class-pattern": "^.*$",
     "number-max-precision":2,
     "keyframes-name-pattern": "^[a-zA-Z]+?(?:-+[a-zA-Z]{2,10}){1,3}$"
