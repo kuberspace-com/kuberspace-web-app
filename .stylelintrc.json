@@ -4,6 +4,10 @@
     "scss/dollar-variable-pattern": null,
     "block-no-empty": null,
     "unit-allowed-list": ["em", "rem", "%", "s"],
-    "alpha-value-notation": ["percentage", { "exceptProperties": ["opacity"] }]
+    "at-rule-name-space-after": "always",
+    "no-extra-semicolons": true,
+    "no-empty-first-line": "always",
+    "indentation": "tab",
+    "alpha-value-notation": "number"
   }
 }

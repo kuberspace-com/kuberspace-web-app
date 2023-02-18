@@ -11,9 +11,8 @@
   overflow: scroll;
 }
 
-.department{
+.department {
   background:white;
-  // margin:5px;
   cursor: pointer;
   display:flex;
   justify-content: center;
@@ -22,80 +21,98 @@
   font-size: 20px;
   min-height: 150px;
   padding:5px;
-  border: 0px solid transparent;
+  border: 0 solid transparent;
   border-radius: 11px;
   position: relative;
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
-  &:hover,&:focus{
-    .overlay-dark{
-      background: rgba(0,0,0,0.5);
-    }
-    span{
-      font-size: 25px;
-    }
+
+  .overlay-dark {
+    border-radius: 11px;
   }
-  span{
+
+  span {
     color:white;
     z-index: +2;
     text-align: center;
-
   }
-  .overlay-dark{
-    border-radius: 11px;
+
+  &:hover, &:focus {
+    .overlay-dark {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    span {
+      font-size: 25px;
+    }
   }
 }
 
-#department-science{
+#department-science {
   background-image: url('/assets/images/departments/science.webp');
 }
-#department-toys-and-games{
+
+#department-toys-and-games {
   background-image: url('/assets/images/departments/toys&games.webp');
 }
-#department-appliances{
+
+#department-appliances {
   background-image: url('/assets/images/departments/appliances.webp');
 }
-#department-arts-and-crafts{
+
+#department-arts-and-crafts {
   background-image: url('/assets/images/departments/arts&crafts.webp');
 }
 
-#department-baby{
+#department-baby {
   background-image: url('/assets/images/departments/baby.webp');
 }
-#department-beauty{
+
+#department-beauty {
   background-image: url('/assets/images/departments/beauty.webp');
 }
-#department-books{
+
+#department-books {
   background-image: url('/assets/images/departments/books.webp');
 }
-#department-music{
+
+#department-music {
   background-image: url('/assets/images/departments/music.webp');
 }
-#department-electronics{
+
+#department-electronics {
   background-image: url('/assets/images/departments/electronics.webp');
 }
-#department-clothing{
+
+#department-clothing {
   background-image: url('/assets/images/departments/clothing.webp');
 }
-#department-garden-and-outdoor{
+
+#department-garden-and-outdoor {
   background-image: url('/assets/images/departments/garden&outdoor.webp');
 }
-#department-home-and-kitchen{
+
+#department-home-and-kitchen {
   background-image: url('/assets/images/departments/home&kitchen.webp');
 }
-#department-video-games{
+
+#department-video-games {
   background-image: url('/assets/images/departments/video-games.webp');
 }
-#department-tools{
+
+#department-tools {
   background-image: url('/assets/images/departments/tools.webp');
 }
-#department-pet{
+
+#department-pet {
   background-image: url('/assets/images/departments/pet.webp');
 }
-#department-office-products{
+
+#department-office-products {
   background-image: url('/assets/images/departments/office-products.webp');
 }
-#department-antiques{
+
+#department-antiques {
   background-image: url('/assets/images/departments/antiques.webp');
 }
