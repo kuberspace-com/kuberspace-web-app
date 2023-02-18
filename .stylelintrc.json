@@ -1,20 +1,21 @@
 {
-  "extends": "stylelint-config-standard-scss",
+  "extends": "stylelint-config-recommended-scss",
+  "plugins":["stylelint-prettier"],
   "rules": {
+    "prettier/prettier": true,
     "scss/dollar-variable-pattern": null,
     "block-no-empty": null,
-    "at-rule-name-space-after": "always",
-    "no-extra-semicolons": true,
-    "no-empty-first-line": true,
-    "indentation": 2,
+    "rule-empty-line-before":["always",{"ignore":["first-nested"]}],
+    "scss/selector-no-redundant-nesting-selector": true,
+    "font-family-no-missing-generic-family-keyword": [true,{"ignoreFontFamilies":["MAIN_THEME"]}],
     "color-function-notation": "legacy",
     "alpha-value-notation": "number",
-    "declaration-colon-space-after":"always",
-    "unit-allowed-list": ["px","em","rem","deg","%","vh","vw","s"],
-    "block-opening-brace-space-before": "always",
+    "scss/dollar-variable-colon-space-after": "always",
+    "scss/dollar-variable-colon-space-before": "never",
+    "unit-allowed-list": ["px","vmin","em","rem","deg","%","vh","vw","s"],
     "declaration-block-no-redundant-longhand-properties":true,
-    "function-comma-space-after": "always",
-    "block-opening-brace-newline-after":"always",
-    "selector-class-pattern": "."
+    "selector-class-pattern": ".",
+    "number-max-precision":2,
+    "keyframes-name-pattern": "^[a-zA-Z]+?(?:-+[a-zA-Z]{2,10}){1,3}$"
   }
 }

@@ -25,7 +25,6 @@
   display: none;
 }
 
-
 .search-box {
   display: flex;
   width: 80%;
@@ -43,9 +42,10 @@
 
 .MuiList-root {
   svg {
-    &:hover, &:focus {
-      fill: yellow!important;
-      color: yellow!important;
+    &:hover,
+    &:focus {
+      fill: yellow !important;
+      color: yellow !important;
     }
   }
 }
@@ -82,25 +82,24 @@
       color: white;
     }
 
-    &:hover, &:focus {
-      background: #d14500!important;
+    &:hover,
+    &:focus {
+      background: #d14500 !important;
 
       svg {
-        filter: brightness(.8);
+        filter: brightness(0.8);
       }
     }
   }
 
-
   .search-button {
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       svg {
         font-size: 30px;
       }
     }
   }
-
-
 }
 
 .search-result-row {
@@ -126,6 +125,3 @@
     text-indent: 10px;
   }
 }
-
-
-
