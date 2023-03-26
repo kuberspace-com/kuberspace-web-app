@@ -1,3 +1,7 @@
+header {
+  position: relative !important;
+}
+
 .top-header {
   top: 0;
   z-index: +1;
@@ -150,5 +154,36 @@
 
   input {
     text-indent: 10px;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .dropdown-ct {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .top-header {
+    .hamburger {
+      font-size: 26px !important;
+    }
+
+    .logo {
+      width: 30px;
+    }
+
+    .header-search-input {
+      padding: 0px;
+      height: auto;
+    }
+
+    .kuberspace-link {
+      display: none;
+    }
   }
 }

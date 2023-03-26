@@ -17,33 +17,24 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
-import { deleteCookie } from '../utilityFunctions/cookie';
-import { USE_AUTH } from '../utilityComponents/authentication';
 import '../App.scss';
 import './header.scss';
 import InsetList from './KeyWordResults';
 import FakeKeyWords from './fakeKeyWords.json';
-import { Result } from '../sharedComponents/interfaces/Result.interface';
+import { Result } from '../interfaces/Result.interface';
+import GENERAL_CONTEXT from '../context/GeneralContext';
 
-function DropDownMenu(props: { NAVIGATE: (url:string, component?:string | boolean | undefined)=> void}) {
-  const AUTH: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>, isLoggedIn: boolean} = USE_AUTH();
-  const LOGOUT = ()=> {
-    deleteCookie('user_session');
-    deleteCookie('userId');
-    AUTH.setLoggedIn(false);
-    props.NAVIGATE('/login');
-  };
-
+function DropDownMenu(props: { NAVIGATE: (url: string, componentToChange: string | boolean | null)=> void, CONTEXT}) {
   return (
     <Stack className="dropdown-ct" direction="row" spacing={2}>
       <Paper sx={{ width: '100%' }}>
         <MenuList>
           <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/', 'home')}> Home </MenuItem>
           <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/about-us', 'about')}> About </MenuItem>
-          {AUTH.isLoggedIn ? <MenuItem>Logout</MenuItem>
-            : <MenuItem className="dropdown-route" onClick={()=> LOGOUT()}> Login </MenuItem>}
+          {props.CONTEXT.state.user.loggedIn ? <MenuItem>Logout</MenuItem>
+            : <MenuItem className="dropdown-route" onClick={()=> props.CONTEXT.logout()}> Login </MenuItem>}
         </MenuList>
       </Paper>
     </Stack>
@@ -52,33 +43,21 @@ function DropDownMenu(props: { NAVIGATE: (url:string, component?:string | boolea
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Header(_props:{className: string}) {
-  var location = useLocation();
-  var [pageLoadColor, setPageLoadColor] = useState('#dd993b');
-  var [component, setComponent]: [
-    string | boolean,
-    React.Dispatch<React.SetStateAction<string | boolean>>
-  ] = useState('home');
   var [navOpen, setNav] = useState(false);
   var [searchResults, setSearchResults]: [
     Result[],
     React.Dispatch<React.SetStateAction<null | Result[]>>
   ] = useState([]);
-
-  const AUTH: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>, isLoggedIn: boolean} = USE_AUTH();
-  const NAVIGATION = useNavigate();
   var [resultsVisable, setResultsVisable] = useState(false);
+  const CONTEXT = React.useContext(GENERAL_CONTEXT);
+  // eslint-disable-next-line no-console
 
-  const NAVIGATE = (url: string, componentToChange?: string | undefined | boolean)=> {
-    if (componentToChange && typeof componentToChange === 'string') {
-      setComponent(componentToChange.toLowerCase());
-    } else {
-      setComponent(false);
-    }
-    // may need to allow null for set component so it does highlight under
+  const NAVIGATE = (url: string, componentToChange: string | boolean | null)=> {
     setNav(false);
-    NAVIGATION(url, { replace: true });
+    CONTEXT.NAVIGATE(url, componentToChange);
   };
 
+  console.log(CONTEXT.state);
   useEffect(()=> {
     $('.App').on('click', (event: { target: { closest: (arg0: string) => null; }; })=> {
       if (event.target.closest('.hamburger') == null
@@ -89,30 +68,7 @@ function Header(_props:{className: string}) {
         setResultsVisable(false);
       }
     });
-    // proably a better way to do this.
-    if (location.pathname === '/') {
-      setComponent('home');
-      setPageLoadColor('#0000005c');
-    } else {
-      const ROUTE = location.pathname.split('/')[1];
-      const LIST_OF_ACCEPTABLE_TABS = [
-        'home',
-        'product-search',
-        'product-details'
-      ];
-      if (LIST_OF_ACCEPTABLE_TABS.includes(ROUTE)) {
-        setComponent(ROUTE);
-      }
-      setPageLoadColor('#dd993b');
-    }
-  }, [location, setComponent, setPageLoadColor]);
-
-  const LOGOUT = ()=> {
-    deleteCookie('user_session');
-    deleteCookie('userId');
-    AUTH.setLoggedIn(false);
-    NAVIGATE('/', 'home');
-  };
+  }, [setNav, setResultsVisable]);
 
   const KEY_DOWN = (
     e: React.KeyboardEvent<HTMLSpanElement>,
@@ -178,11 +134,16 @@ function Header(_props:{className: string}) {
         >
           <img className="logo hover-text" alt="logo" src="/KuberspaceLogo.png" />
         </div>
-        <Typography sx={{ marginRight: '20px' }} variant="h6" color="inherit" component="div">
+        <Typography
+          sx={{ marginRight: '20px' }}
+          variant="h6"
+          color="inherit"
+          component="div"
+        >
           <span
             tabIndex={0}
             role="button"
-            className="hover-text"
+            className="hover-text kuberspace-link"
             onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/', 'home'); })}
             onClick={()=> { NAVIGATE('/', 'home'); }}
           >
@@ -190,7 +151,7 @@ function Header(_props:{className: string}) {
           </span>
         </Typography>
         <div className="tab-ct">
-          <Tabs value={component ?? false}>
+          <Tabs value={CONTEXT.state.component ?? false}>
             <Tab
               onClick={()=> { NAVIGATE('/', 'home'); }}
               className="hovertab"
@@ -237,10 +198,10 @@ function Header(_props:{className: string}) {
         >
           <AccountCircleIcon />
         </span>
-        {AUTH.isLoggedIn ? (
+        {CONTEXT.state.user.loggedIn ? (
           <span
-            onClick={LOGOUT}
-            onKeyDown={(e)=> KEY_DOWN(e, LOGOUT)}
+            onClick={CONTEXT.logout}
+            onKeyDown={(e)=> KEY_DOWN(e, CONTEXT.logout)}
             style={{
               position: 'absolute',
               right: '30px',
@@ -255,8 +216,10 @@ function Header(_props:{className: string}) {
           </span>
         ) : (
           <span
-            onClick={()=> { NAVIGATE('/login'); }}
-            onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/login'); })}
+            onClick={()=> {
+              NAVIGATE('/login', null);
+            }}
+            onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/login', null); })}
             style={{
               position: 'absolute',
               right: '30px',
@@ -290,6 +253,7 @@ function Header(_props:{className: string}) {
             </button>
             <Input
               style={{ textIndent: '50px' }}
+              className="header-search-input"
               sx={{
                 cursor: 'text',
                 color: 'black',
@@ -326,7 +290,7 @@ function Header(_props:{className: string}) {
           </div>
         </div> */}
       </div>
-      {navOpen ? <DropDownMenu NAVIGATE={NAVIGATE} /> : null}
+      {navOpen ? <DropDownMenu NAVIGATE={NAVIGATE} CONTEXT={CONTEXT} /> : null}
     </AppBar>
   );
 }
