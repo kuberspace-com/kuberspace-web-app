@@ -12,7 +12,7 @@
     "alpha-value-notation": "number",
     "scss/dollar-variable-colon-space-after": "always",
     "scss/dollar-variable-colon-space-before": "never",
-    "unit-allowed-list": ["px","vmin","em","rem","deg","%","vh","vw","s"],
+    "unit-allowed-list": ["px","vmin","em","rem","deg","%","vh","vw","s","fr"],
     "declaration-block-no-redundant-longhand-properties":true,
     "selector-class-pattern": "^.*$",
     "number-max-precision":2,

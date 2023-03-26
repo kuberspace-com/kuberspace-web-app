@@ -101,12 +101,7 @@ function Departments() {
       label: 'Antiques'
     }
   ];
-  // finish this up later and add rest of images
-  // finish search bar by sunday
-  // fix up footer
-  // make size of departments workable
-  // not in scope to finish each department
-  // after this sprint work on figuring out deployment of this home page
+
   const KEY_DOWN = (e, callback)=> {
     // eslint-disable-next-line no-console
     console.log(e.keyCode);
