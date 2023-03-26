@@ -7,44 +7,22 @@ function Footer() {
       <div className="flex">
         <section className="flex-content padding_1x">
           <h3>Top Products</h3>
-          <a href="/">Managed Website</a>
-          <a href="/">Manage Reputation</a>
-          <a href="/">Power Tools</a>
-          <a href="/">Marketing Service</a>
+          <a href="/"><span>Gold</span></a>
+          <a href="/"><span>Iran</span></a>
+          <a href="/"><span>Copper</span></a>
+          <a href="/"><span>Silver</span></a>
         </section>
         <section className="flex-content padding_1x">
           <h3>Quick Links</h3>
-          <a href="/">Jobs</a>
-          <a href="/">Brand Assets</a>
-          <a href="/">Investor Relations</a>
-          <a href="/">Terms of Service</a>
-        </section>
-        <section className="flex-content padding_1x">
-          <h3>Features</h3>
-          <a href="/">Jobs</a>
-          <a href="/">Brand Assets</a>
-          <a href="/">Investor Relations</a>
-          <a href="/">Terms of Service</a>
-        </section>
-        <section className="flex-content padding_1x">
-          <h3>Resources</h3>
-          <a href="/">Guides</a>
-          <a href="/">Research</a>
-          <a href="/">Experts</a>
-          <a href="/">Agencies</a>
-        </section>
-        <section className="flex-content padding_1x">
-          <h3>Newsletter</h3>
-          <p>You can trust us. we only send promo offers,</p>
-          <fieldset className="fixed_flex">
-            <input type="email" name="newsletter" placeholder="Your Email Address" />
-            <button type="button" className="btn btn_2"> Subscribe </button>
-          </fieldset>
+          <a href="/"><span>About Us</span></a>
+          <a href="/"><span>Account</span></a>
+          <a href="/"><span>Trading Platform</span></a>
+          <a href="/"><span>Terms of Service</span></a>
         </section>
       </div>
       <div className="flex">
         <section className="flex-content padding_1x">
-          <p>Copyright ©2023 All rights reserved || website name</p>
+          <p>Copyright kuberspace©2023 All rights reserved kuberspace.com</p>
         </section>
         <section className="flex-content padding_1x">
           <a href="/" aria-label="Facebook"><i className="fa fa-facebook" /></a>

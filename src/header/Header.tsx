@@ -152,7 +152,7 @@ function Header(_props:{className: string}) {
     <AppBar
       className="top-header"
       sx={{
-        backgroundColor: pageLoadColor,
+        backgroundColor: '#000000',
         position: 'absolute'
       }}
     >
@@ -165,8 +165,9 @@ function Header(_props:{className: string}) {
             aria-label="menu"
             name="drop-down button"
             sx={{ mr: 2 }}
+            className="hover-text"
           >
-            <MenuIcon className="hover-icon" />
+            <MenuIcon className="hover-text" />
           </IconButton>
         </div>
         <div
@@ -175,13 +176,13 @@ function Header(_props:{className: string}) {
           tabIndex={0}
           role="button"
         >
-          <img className="logo hover-icon" alt="logo" src="/KuberspaceLogo.png" />
+          <img className="logo hover-text" alt="logo" src="/KuberspaceLogo.png" />
         </div>
         <Typography sx={{ marginRight: '20px' }} variant="h6" color="inherit" component="div">
           <span
             tabIndex={0}
             role="button"
-            className="hover-icon"
+            className="hover-text"
             onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/', 'home'); })}
             onClick={()=> { NAVIGATE('/', 'home'); }}
           >
@@ -215,7 +216,7 @@ function Header(_props:{className: string}) {
             cursor: 'pointer'
           }}
           color="inherit"
-          className="hover-icon"
+          className="hover-text"
           tabIndex={0}
           role="button"
         >
@@ -230,7 +231,7 @@ function Header(_props:{className: string}) {
             cursor: 'pointer'
           }}
           color="inherit"
-          className="hover-icon"
+          className="hover-text"
           tabIndex={0}
           role="button"
         >
@@ -245,7 +246,7 @@ function Header(_props:{className: string}) {
               right: '30px',
               cursor: 'pointer'
             }}
-            className="hover-icon"
+            className="hover-text"
             color="inherit"
             tabIndex={0}
             role="button"
@@ -261,7 +262,7 @@ function Header(_props:{className: string}) {
               right: '30px',
               cursor: 'pointer'
             }}
-            className="hover-icon"
+            className="hover-text"
             color="inherit"
             role="button"
             tabIndex={0}
@@ -271,8 +272,14 @@ function Header(_props:{className: string}) {
         )}
       </Toolbar>
       <div className="search-bar">
-        <div className="search-container">
-          {/* this need to have elastic search for similar queries */}
+        <div className="search">
+          <Input type="text" className="searchTerm" placeholder="What are you looking for?" />
+          <button type="submit" className="searchButton hover-text">
+            <i className="fa fa-search" />
+          </button>
+        </div>
+        {/* <div className="search-container">
+          {/* this need to have elastic search for similar queries
           <div className="search-input-wrapper">
             <button
               type="button"
@@ -317,7 +324,7 @@ function Header(_props:{className: string}) {
               )
               : null}
           </div>
-        </div>
+        </div> */}
       </div>
       {navOpen ? <DropDownMenu NAVIGATE={NAVIGATE} /> : null}
     </AppBar>

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 import './homepage.scss';
-import Departments from './Departments';
 
 function Home() {
   useEffect(()=> {
@@ -15,33 +14,9 @@ function Home() {
   // call background image desert-background
   return (
     <div className="homepage">
-      <Departments />
-      <div
-        className="background-image homepage-background-image"
-        style={{
-          backgroundImage: 'url(/images/homePageBackground-small.webp)',
-          backgroundAttachment: 'fixed',
-          position: 'absolute',
-          height: '100vh',
-          width: '100vw',
-          top: '0px',
-          backgroundSize: 'cover',
-          zIndex: '-1'
-        }}
-      />
-      <div
-        className="background-image  homepage-background-image"
-        style={{
-          backgroundImage: 'url(/images/homePageBackground-small.webp)',
-          backgroundAttachment: 'fixed',
-          position: 'absolute',
-          height: '100vh',
-          width: '100vw',
-          top: '100vh',
-          backgroundSize: 'cover',
-          zIndex: '-1'
-        }}
-      />
+      <h2 className="page-title">Periodic Table</h2>
+      <div className="periodic-table-desktop" />
+      <div className="periodic-table-mobile" />
     </div>
   );
 }
