@@ -42,7 +42,8 @@ h2,
 h3,
 h4,
 h5,
-div {
+div,
+svg {
   // font-family: "MAIN_THEME";
   font-family: "Pacifico", cursive;
   font-weight: bold;
@@ -62,12 +63,6 @@ div {
   height: 100%;
   min-height: 100vh;
   position: relative;
-}
-
-.page-title {
-  margin: 10px;
-  text-align: center;
-  width: 100%;
 }
 
 .hover-icon {

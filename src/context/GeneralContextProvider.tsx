@@ -82,14 +82,12 @@ function GeneralContextProvider(props): ReactJSXElement {
     } else {
       setComponent(false);
     }
-    console.log('url in use navigate', url);
     setPage(url);
     navigate(url, { replace: true });
   };
 
   useEffect(()=> {
     setPage(location.pathname);
-    console.log('location', location.pathname);
     if (location.pathname === '/') {
       setComponent('home');
     }

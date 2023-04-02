@@ -11,24 +11,35 @@ import {
   Tab,
   Input
 } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import CancelIcon from '@mui/icons-material/Cancel';
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate } from 'react-router-dom';
 import $ from 'jquery';
 import '../App.scss';
 import './header.scss';
-import InsetList from './KeyWordResults';
 import FakeKeyWords from './fakeKeyWords.json';
 import { Result } from '../interfaces/Result.interface';
 import GENERAL_CONTEXT from '../context/GeneralContext';
 
-function DropDownMenu(props: { NAVIGATE: (url: string, componentToChange: string | boolean | null)=> void, CONTEXT}) {
+function DropDownMenu(props: {
+  NAVIGATE: (
+    url: string,
+    componentToChange: string | boolean | null
+  )=> void,
+  CONTEXT,
+  navOpen: boolean
+}) {
   return (
-    <Stack className="dropdown-ct" direction="row" spacing={2}>
+    <Stack
+      className="dropdown-ct"
+      style={
+        props.navOpen ? { animation: 'dropdown-ct-down 2s linear forwards' }
+          : { }
+      }
+      direction="row"
+      spacing={2}
+    >
       <Paper sx={{ width: '100%' }}>
         <MenuList>
           <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/', 'home')}> Home </MenuItem>
@@ -40,7 +51,6 @@ function DropDownMenu(props: { NAVIGATE: (url: string, componentToChange: string
     </Stack>
   );
 }
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Header(_props:{className: string}) {
   var [navOpen, setNav] = useState(false);
@@ -57,7 +67,6 @@ function Header(_props:{className: string}) {
     CONTEXT.NAVIGATE(url, componentToChange);
   };
 
-  console.log(CONTEXT.state);
   useEffect(()=> {
     $('.App').on('click', (event: { target: { closest: (arg0: string) => null; }; })=> {
       if (event.target.closest('.hamburger') == null
@@ -290,7 +299,7 @@ function Header(_props:{className: string}) {
           </div>
         </div> */}
       </div>
-      {navOpen ? <DropDownMenu NAVIGATE={NAVIGATE} CONTEXT={CONTEXT} /> : null}
+      <DropDownMenu navOpen={navOpen} NAVIGATE={NAVIGATE} CONTEXT={CONTEXT} />
     </AppBar>
   );
 }

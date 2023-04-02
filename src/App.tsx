@@ -12,37 +12,8 @@ import GENERAL_CONTEXT from './context/GeneralContext';
 function App() {
   const CONTEXT = React.useContext(GENERAL_CONTEXT);
 
-  React.useEffect(()=> {
-    setTimeout(()=> {
-      $('.App').css({ 'background-image': $('.App').css('background-image').replace('-small', '-large') });
-    }, 3000);
-  }, []);
-
   return (
-    <div
-      className="App"
-      style={CONTEXT.state.page === '/' ? {
-        backgroundImage: 'url(/images/homePageBackground-small.webp)',
-        backgroundAttachment: 'fixed',
-        position: 'absolute',
-        height: '200%',
-        width: '100vw',
-        backgroundSize: 'cover',
-        zIndex: '-1'
-      } : {}}
-    >
-      {/* <div
-        className="App"
-        style={CONTEXT.state.page === '/' ? {
-          backgroundImage: 'url(/images/homePageBackground-small.webp)',
-          backgroundAttachment: 'fixed',
-          position: 'absolute',
-          height: '200%',
-          width: '100vw',
-          backgroundSize: 'cover',
-          zIndex: '-1'
-        } : {}}
-      /> */}
+    <div className="App">
       <Header className="top_header" />
       <main className="page">
         <Routes>

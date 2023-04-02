@@ -1,9 +1,7 @@
-header {
-  position: relative !important;
-}
-
 .top-header {
   top: 0;
+  position: relative !important;
+
   z-index: +1;
   border-bottom: 1px solid rgb(10, 191, 38);
 }
@@ -156,6 +154,33 @@ header {
     text-indent: 10px;
   }
 }
+
+.dropdown-ct {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/*
+  ANIMATIONS
+*/
+@keyframes dropdown-ct-down {
+  from {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    display: absolute;
+  }
+}
+
+/*
+  MEDIA QUERIES
+*/
 
 @media only screen and (min-width: 920px) {
   .dropdown-ct {
