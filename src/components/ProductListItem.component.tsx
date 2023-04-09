@@ -8,9 +8,10 @@ import {
 } from '@mui/material';
 import { onKeyEnter } from '../utilityFunctions/keyEvents';
 import { Product } from '../interfaces/Product.interface';
-import useBreakpoints from '../hooks/useBreakpoints';
+// import useBreakpoints from '../hooks/useBreakpoints';
 
 export default function ProductListItem(props: {product: Product}) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   function navigateToProductPage(_group: any): void {
     throw new Error('Function not implemented.');
   }

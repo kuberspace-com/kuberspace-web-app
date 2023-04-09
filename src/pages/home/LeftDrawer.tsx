@@ -16,10 +16,10 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useNavigate } from 'react-router-dom';
 import USE_VIEWPORT from '../../hooks/UseViewport';
-import GENERAL_CONTEXT from '../../context/GeneralContext';
+// import GENERAL_CONTEXT from '../../context/GeneralContext';
 
 export default function LeftDrawer(props) {
-  const CONTEXT = React.useContext(GENERAL_CONTEXT);
+  // const CONTEXT = React.useContext(GENERAL_CONTEXT);
   const { VIEWPORT_WIDTH } = USE_VIEWPORT();
   const [OPEN, SET_OPEN] = useState(!(VIEWPORT_WIDTH <= 900));
   // if screen is not mobile then leave
@@ -88,7 +88,7 @@ export default function LeftDrawer(props) {
                 <ListItem
                   key={text}
                   onClick={
-                (e)=> NAVIGATE(`/products/${text}`)
+                ()=> NAVIGATE(`/products/${text}`)
                 }
                   disablePadding
                 >

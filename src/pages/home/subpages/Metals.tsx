@@ -4,6 +4,7 @@ import ProductGrid from '../../../components/ProductList.component';
 import productsJson from '../../../assets/json/metals.json';
 
 function Metals() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [PRODUCTS, SET_PRODUCTS]: [
     Array<Product>,
     Dispatch<SetStateAction<Array<Product | null>>>

@@ -18,8 +18,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import $ from 'jquery';
 import '../App.scss';
 import './header.scss';
-import FakeKeyWords from './fakeKeyWords.json';
-import { Result } from '../interfaces/Result.interface';
+// import FakeKeyWords from './fakeKeyWords.json';
+// import { Result } from '../interfaces/Result.interface';
 import GENERAL_CONTEXT from '../context/GeneralContext';
 
 function DropDownMenu(props: {
@@ -54,10 +54,12 @@ function DropDownMenu(props: {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Header(_props:{className: string}) {
   var [navOpen, setNav] = useState(false);
-  var [searchResults, setSearchResults]: [
-    Result[],
-    React.Dispatch<React.SetStateAction<null | Result[]>>
-  ] = useState([]);
+  // var [searchResults, setSearchResults]: [
+  //   Result[],
+  //   React.Dispatch<React.SetStateAction<null | Result[]>>
+  // ] = useState([]);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   var [resultsVisable, setResultsVisable] = useState(false);
   const CONTEXT = React.useContext(GENERAL_CONTEXT);
   // eslint-disable-next-line no-console
@@ -88,30 +90,30 @@ function Header(_props:{className: string}) {
     }
   };
 
-  const SEARCH_QUERY = (keyWord: string)=> {
-    // go to search page with ?qs='trains'
-    // eslint-disable-next-line no-console
-    console.log('keyWord: ', keyWord);
-    setResultsVisable(false);
-    NAVIGATE(`/product-list?keyWord=${keyWord}`, false);
-    // send to page router
-  };
+  // const SEARCH_QUERY = (keyWord: string)=> {
+  //   // go to search page with ?qs='trains'
+  //   // eslint-disable-next-line no-console
+  //   console.log('keyWord: ', keyWord);
+  //   setResultsVisable(false);
+  //   NAVIGATE(`/product-list?keyWord=${keyWord}`, false);
+  //   // send to page router
+  // };
 
   // function focusSearch() {
   //   if (searchResults != null) {
   //     setResultsVisable(true);
   //   }
   // }
-  function searchKeyWords(keyword: string): void {
-    // pull down related keywords
-    if (keyword !== '') {
-      // get results from test file
-      setSearchResults(FakeKeyWords.keyWords);
-      setResultsVisable(true);
-    } else {
-      setResultsVisable(false);
-    }
-  }
+  // function searchKeyWords(keyword: string): void {
+  //   // pull down related keywords
+  //   if (keyword !== '') {
+  //     // get results from test file
+  //     setSearchResults(FakeKeyWords.keyWords);
+  //     setResultsVisable(true);
+  //   } else {
+  //     setResultsVisable(false);
+  //   }
+  // }
 
   return (
     <AppBar
@@ -250,54 +252,6 @@ function Header(_props:{className: string}) {
             <i className="fa fa-search" />
           </button>
         </div>
-        {/* <div className="search-container">
-          {/* this need to have elastic search for similar queries
-          <div className="search-input-wrapper">
-            <button
-              type="button"
-              className="search-icon-wrapper"
-              tabIndex={0}
-            >
-              <SearchIcon />
-            </button>
-            <Input
-              style={{ textIndent: '50px' }}
-              className="header-search-input"
-              sx={{
-                cursor: 'text',
-                color: 'black',
-                padding: '4px',
-                width: '100%'
-              }}
-              onClick={(event): void=> {
-                const TARGET = event.target as HTMLInputElement;
-                if (TARGET.value !== '') {
-                  setResultsVisable(true);
-                }
-              }}
-              onChange={(e: ChangeEvent): void=> {
-                const TARGET = e.target as HTMLInputElement;
-                const VALUE: string = TARGET.value;
-                searchKeyWords(VALUE);
-              }}
-              placeholder="Search…"
-              aria-label="search"
-            />
-            <button
-              type="button"
-              className="search-icon-wrapper"
-              tabIndex={0}
-              style={{ background: '#e43131' }}
-            >
-              <CancelIcon />
-            </button>
-            {resultsVisable
-              ? (
-                <InsetList SEARCH_QUERY={SEARCH_QUERY} results={searchResults} />
-              )
-              : null}
-          </div>
-        </div> */}
       </div>
       <DropDownMenu navOpen={navOpen} NAVIGATE={NAVIGATE} CONTEXT={CONTEXT} />
     </AppBar>

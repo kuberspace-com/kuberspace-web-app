@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 function About() {
   return (

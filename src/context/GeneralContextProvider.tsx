@@ -1,11 +1,12 @@
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import React, {
-  Dispatch, SetStateAction, useEffect, useState
+  Dispatch, SetStateAction, useState
 } from 'react';
-import { redirect, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import GENERAL_CONTEXT from './GeneralContext';
 
 function GeneralContextProvider(props): ReactJSXElement {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   var location = useLocation();
   var navigate = useNavigate();
 
@@ -24,16 +25,19 @@ function GeneralContextProvider(props): ReactJSXElement {
     Dispatch<SetStateAction<string | null>>
   ] = useState(null);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   var [loggedIn, setLoggedIn]: [
     boolean,
     Dispatch<SetStateAction<boolean>>
   ] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   var [userPermissions, setUserPermissions]: [
     object,
     Dispatch<SetStateAction<object>>
   ] = useState({});
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   var [userAuthToken, setUserAuthToken]: [
     string,
     Dispatch<SetStateAction<string>>
@@ -44,6 +48,7 @@ function GeneralContextProvider(props): ReactJSXElement {
     // set user fields to null
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function login(userName: string, password: string): void {
     // axios call for authentication
     // set user fields
