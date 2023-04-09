@@ -5,7 +5,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import StarIcon from '@mui/icons-material/Star';
-import Result from '../sharedComponents/interfaces/Result.interface.ts';
+import Result from '../interfaces/Result.interface.ts';
 
 export default function InsetList(props: {results: Array<Result>, SEARCH_QUERY: (keyWord: string)=>void}) {
   return (

@@ -79,6 +79,7 @@ fieldset {
 .footer {
   padding: 4rem;
   position: relative;
+  border-top: rgb(10, 191, 38) 2px solid;
 }
 
 .btn {
@@ -139,7 +140,6 @@ fieldset {
 ****************************/
 
 footer {
-  background-color: var(--primary);
   color: var(--lite);
 
   h3 {

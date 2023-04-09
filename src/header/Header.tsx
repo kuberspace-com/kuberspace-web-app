@@ -11,72 +11,62 @@ import {
   Tab,
   Input
 } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import CancelIcon from '@mui/icons-material/Cancel';
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate, useLocation } from 'react-router-dom';
 import $ from 'jquery';
-import { deleteCookie } from '../utilityFunctions/cookie';
-import { USE_AUTH } from '../utilityComponents/authentication';
 import '../App.scss';
 import './header.scss';
-import InsetList from './KeyWordResults';
-import FakeKeyWords from './fakeKeyWords.json';
-import { Result } from '../sharedComponents/interfaces/Result.interface';
+// import FakeKeyWords from './fakeKeyWords.json';
+// import { Result } from '../interfaces/Result.interface';
+import GENERAL_CONTEXT from '../context/GeneralContext';
 
-function DropDownMenu(props: { NAVIGATE: (url:string, component?:string | boolean | undefined)=> void}) {
-  const AUTH: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>, isLoggedIn: boolean} = USE_AUTH();
-  const LOGOUT = ()=> {
-    deleteCookie('user_session');
-    deleteCookie('userId');
-    AUTH.setLoggedIn(false);
-    props.NAVIGATE('/login');
-  };
-
+function DropDownMenu(props: {
+  NAVIGATE: (
+    url: string,
+    componentToChange: string | boolean | null
+  )=> void,
+  CONTEXT,
+  navOpen: boolean
+}) {
   return (
-    <Stack className="dropdown-ct" direction="row" spacing={2}>
+    <Stack
+      className="dropdown-ct"
+      style={
+        props.navOpen ? { animation: 'dropdown-ct-down 2s linear forwards' }
+          : { }
+      }
+      direction="row"
+      spacing={2}
+    >
       <Paper sx={{ width: '100%' }}>
         <MenuList>
           <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/', 'home')}> Home </MenuItem>
-          <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/about-us', 'about')}> About </MenuItem>
-          {AUTH.isLoggedIn ? <MenuItem>Logout</MenuItem>
-            : <MenuItem className="dropdown-route" onClick={()=> LOGOUT()}> Login </MenuItem>}
+          <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/about', 'about')}> About </MenuItem>
+          {props.CONTEXT.state.user.loggedIn ? <MenuItem>Logout</MenuItem>
+            : <MenuItem className="dropdown-route" onClick={()=> props.CONTEXT.logout()}> Login </MenuItem>}
         </MenuList>
       </Paper>
     </Stack>
   );
 }
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Header(_props:{className: string}) {
-  var location = useLocation();
-  var [pageLoadColor, setPageLoadColor] = useState('#dd993b');
-  var [component, setComponent]: [
-    string | boolean,
-    React.Dispatch<React.SetStateAction<string | boolean>>
-  ] = useState('home');
   var [navOpen, setNav] = useState(false);
-  var [searchResults, setSearchResults]: [
-    Result[],
-    React.Dispatch<React.SetStateAction<null | Result[]>>
-  ] = useState([]);
+  // var [searchResults, setSearchResults]: [
+  //   Result[],
+  //   React.Dispatch<React.SetStateAction<null | Result[]>>
+  // ] = useState([]);
 
-  const AUTH: {setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>, isLoggedIn: boolean} = USE_AUTH();
-  const NAVIGATION = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   var [resultsVisable, setResultsVisable] = useState(false);
+  const CONTEXT = React.useContext(GENERAL_CONTEXT);
+  // eslint-disable-next-line no-console
 
-  const NAVIGATE = (url: string, componentToChange?: string | undefined | boolean)=> {
-    if (componentToChange && typeof componentToChange === 'string') {
-      setComponent(componentToChange.toLowerCase());
-    } else {
-      setComponent(false);
-    }
-    // may need to allow null for set component so it does highlight under
+  const NAVIGATE = (url: string, componentToChange: string | boolean | null)=> {
     setNav(false);
-    NAVIGATION(url, { replace: true });
+    CONTEXT.NAVIGATE(url, componentToChange);
   };
 
   useEffect(()=> {
@@ -89,30 +79,7 @@ function Header(_props:{className: string}) {
         setResultsVisable(false);
       }
     });
-    // proably a better way to do this.
-    if (location.pathname === '/') {
-      setComponent('home');
-      setPageLoadColor('#0000005c');
-    } else {
-      const ROUTE = location.pathname.split('/')[1];
-      const LIST_OF_ACCEPTABLE_TABS = [
-        'home',
-        'product-search',
-        'product-details'
-      ];
-      if (LIST_OF_ACCEPTABLE_TABS.includes(ROUTE)) {
-        setComponent(ROUTE);
-      }
-      setPageLoadColor('#dd993b');
-    }
-  }, [location, setComponent, setPageLoadColor]);
-
-  const LOGOUT = ()=> {
-    deleteCookie('user_session');
-    deleteCookie('userId');
-    AUTH.setLoggedIn(false);
-    NAVIGATE('/', 'home');
-  };
+  }, [setNav, setResultsVisable]);
 
   const KEY_DOWN = (
     e: React.KeyboardEvent<HTMLSpanElement>,
@@ -123,36 +90,36 @@ function Header(_props:{className: string}) {
     }
   };
 
-  const SEARCH_QUERY = (keyWord: string)=> {
-    // go to search page with ?qs='trains'
-    // eslint-disable-next-line no-console
-    console.log('keyWord: ', keyWord);
-    setResultsVisable(false);
-    NAVIGATE(`/product-list?keyWord=${keyWord}`, false);
-    // send to page router
-  };
+  // const SEARCH_QUERY = (keyWord: string)=> {
+  //   // go to search page with ?qs='trains'
+  //   // eslint-disable-next-line no-console
+  //   console.log('keyWord: ', keyWord);
+  //   setResultsVisable(false);
+  //   NAVIGATE(`/product-list?keyWord=${keyWord}`, false);
+  //   // send to page router
+  // };
 
   // function focusSearch() {
   //   if (searchResults != null) {
   //     setResultsVisable(true);
   //   }
   // }
-  function searchKeyWords(keyword: string): void {
-    // pull down related keywords
-    if (keyword !== '') {
-      // get results from test file
-      setSearchResults(FakeKeyWords.keyWords);
-      setResultsVisable(true);
-    } else {
-      setResultsVisable(false);
-    }
-  }
+  // function searchKeyWords(keyword: string): void {
+  //   // pull down related keywords
+  //   if (keyword !== '') {
+  //     // get results from test file
+  //     setSearchResults(FakeKeyWords.keyWords);
+  //     setResultsVisable(true);
+  //   } else {
+  //     setResultsVisable(false);
+  //   }
+  // }
 
   return (
     <AppBar
       className="top-header"
       sx={{
-        backgroundColor: pageLoadColor,
+        backgroundColor: '#000000',
         position: 'absolute'
       }}
     >
@@ -165,8 +132,9 @@ function Header(_props:{className: string}) {
             aria-label="menu"
             name="drop-down button"
             sx={{ mr: 2 }}
+            className="hover-text"
           >
-            <MenuIcon className="hover-icon" />
+            <MenuIcon className="hover-text" />
           </IconButton>
         </div>
         <div
@@ -175,13 +143,18 @@ function Header(_props:{className: string}) {
           tabIndex={0}
           role="button"
         >
-          <img className="logo hover-icon" alt="logo" src="/KuberspaceLogo.png" />
+          <img className="logo hover-text" alt="logo" src="/KuberspaceLogo.png" />
         </div>
-        <Typography sx={{ marginRight: '20px' }} variant="h6" color="inherit" component="div">
+        <Typography
+          sx={{ marginRight: '20px' }}
+          variant="h6"
+          color="inherit"
+          component="div"
+        >
           <span
             tabIndex={0}
             role="button"
-            className="hover-icon"
+            className="hover-text kuberspace-link"
             onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/', 'home'); })}
             onClick={()=> { NAVIGATE('/', 'home'); }}
           >
@@ -189,7 +162,7 @@ function Header(_props:{className: string}) {
           </span>
         </Typography>
         <div className="tab-ct">
-          <Tabs value={component ?? false}>
+          <Tabs value={CONTEXT.state.component ?? false}>
             <Tab
               onClick={()=> { NAVIGATE('/', 'home'); }}
               className="hovertab"
@@ -198,7 +171,7 @@ function Header(_props:{className: string}) {
               tabIndex={0}
             />
             <Tab
-              onClick={()=> { NAVIGATE('/about-us', 'about'); }}
+              onClick={()=> { NAVIGATE('/about', 'about'); }}
               className="hovertab"
               label="about us"
               value="about"
@@ -215,7 +188,7 @@ function Header(_props:{className: string}) {
             cursor: 'pointer'
           }}
           color="inherit"
-          className="hover-icon"
+          className="hover-text"
           tabIndex={0}
           role="button"
         >
@@ -230,22 +203,22 @@ function Header(_props:{className: string}) {
             cursor: 'pointer'
           }}
           color="inherit"
-          className="hover-icon"
+          className="hover-text"
           tabIndex={0}
           role="button"
         >
           <AccountCircleIcon />
         </span>
-        {AUTH.isLoggedIn ? (
+        {CONTEXT.state.user.loggedIn ? (
           <span
-            onClick={LOGOUT}
-            onKeyDown={(e)=> KEY_DOWN(e, LOGOUT)}
+            onClick={CONTEXT.logout}
+            onKeyDown={(e)=> KEY_DOWN(e, CONTEXT.logout)}
             style={{
               position: 'absolute',
               right: '30px',
               cursor: 'pointer'
             }}
-            className="hover-icon"
+            className="hover-text"
             color="inherit"
             tabIndex={0}
             role="button"
@@ -254,14 +227,16 @@ function Header(_props:{className: string}) {
           </span>
         ) : (
           <span
-            onClick={()=> { NAVIGATE('/login'); }}
-            onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/login'); })}
+            onClick={()=> {
+              NAVIGATE('/login', null);
+            }}
+            onKeyDown={(e)=> KEY_DOWN(e, ()=> { NAVIGATE('/login', null); })}
             style={{
               position: 'absolute',
               right: '30px',
               cursor: 'pointer'
             }}
-            className="hover-icon"
+            className="hover-text"
             color="inherit"
             role="button"
             tabIndex={0}
@@ -271,55 +246,14 @@ function Header(_props:{className: string}) {
         )}
       </Toolbar>
       <div className="search-bar">
-        <div className="search-container">
-          {/* this need to have elastic search for similar queries */}
-          <div className="search-input-wrapper">
-            <button
-              type="button"
-              className="search-icon-wrapper"
-              tabIndex={0}
-            >
-              <SearchIcon />
-            </button>
-            <Input
-              style={{ textIndent: '50px' }}
-              sx={{
-                cursor: 'text',
-                color: 'black',
-                padding: '4px',
-                width: '100%'
-              }}
-              onClick={(event): void=> {
-                const TARGET = event.target as HTMLInputElement;
-                if (TARGET.value !== '') {
-                  setResultsVisable(true);
-                }
-              }}
-              onChange={(e: ChangeEvent): void=> {
-                const TARGET = e.target as HTMLInputElement;
-                const VALUE: string = TARGET.value;
-                searchKeyWords(VALUE);
-              }}
-              placeholder="Search…"
-              aria-label="search"
-            />
-            <button
-              type="button"
-              className="search-icon-wrapper"
-              tabIndex={0}
-              style={{ background: '#e43131' }}
-            >
-              <CancelIcon />
-            </button>
-            {resultsVisable
-              ? (
-                <InsetList SEARCH_QUERY={SEARCH_QUERY} results={searchResults} />
-              )
-              : null}
-          </div>
+        <div className="search">
+          <Input type="text" className="searchTerm" placeholder="What are you looking for?" />
+          <button type="submit" className="searchButton hover-text">
+            <i className="fa fa-search" />
+          </button>
         </div>
       </div>
-      {navOpen ? <DropDownMenu NAVIGATE={NAVIGATE} /> : null}
+      <DropDownMenu navOpen={navOpen} NAVIGATE={NAVIGATE} CONTEXT={CONTEXT} />
     </AppBar>
   );
 }

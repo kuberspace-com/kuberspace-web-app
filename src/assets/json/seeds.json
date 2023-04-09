@@ -1,0 +1,134 @@
+{
+  "products": [
+    {
+      "name": "Tomato",
+      "description": "Tomato is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "S1",
+      "id": "fwowfm23fj09f3jf2",
+      "catagory": "seeds",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/seeds/tomato.jpeg"
+      ]
+    },
+    {
+      "name": "Beets",
+      "description": "Beets are one of the most used vegtables in North America.",
+      "price": 15.99,
+      "weightInGrams": 50,
+      "group": "S2",
+      "id": "fwoinfewie439294",
+      "catagory": "seeds",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/seeds/beets.jpeg"
+      ]
+    },
+    {
+      "name": "Carrot",
+      "description": "Carrot's are one of the most used vegtables in North America.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "S3",
+      "id": "wagergsdfwefaf",
+      "catagory": "seeds",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/seeds/carrot.jpg"
+      ]
+    },
+    {
+      "name": "Chili Pepper",
+      "description": "Chili Peppers are one of the most used vegtables in North America.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "S4",
+      "id": "geagsdfergeg",
+      "catagory": "seeds",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/seeds/chili-pepper.webp"
+      ]
+    },
+    {
+      "name": "Cucumber",
+      "description": "Cucumber's are one of the most used vegtables in North America.",
+      "price": 13.69,
+      "weightInGrams": 50,
+      "group": "S5",
+      "id": "eahreh5sdgffew",
+      "catagory": "seeds",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/seeds/cucumber.jpg"
+      ]
+    },
+    {
+      "name": "Eggplant",
+      "description": "Eggplant's are one of the most used vegtables in North America.",
+      "price": 23.99,
+      "weightInGrams": 50,
+      "group": "S6",
+      "id": "ewonwiecwudwef",
+      "catagory": "seeds",
+      "inventoryOnHand": 5,
+      "images": [
+        "/images/seeds/eggplant.jpeg"
+      ]
+    },
+    {
+      "name": "Kale",
+      "description": "Kale is one of the most used vegtables in North America.",
+      "price": 8.99,
+      "weightInGrams": 50,
+      "group": "S7",
+      "id": "ve9iwn9483hsef",
+      "catagory": "seeds",
+      "inventoryOnHand": 4,
+      "images": [
+        "/images/seeds/kale.jpeg"
+      ]
+    },
+    {
+      "name": "Lavender",
+      "description": "Lavendar is used in many products such as lotions and bathing products.",
+      "price": 7.68,
+      "weightInGrams": 50,
+      "group": "S8",
+      "id": "vn3w80f347gfhu",
+      "catagory": "seeds",
+      "inventoryOnHand": 35,
+      "images": [
+        "/images/seeds/lavender.webp"
+      ]
+    },
+    {
+      "name": "Lettuce",
+      "description": "Lettuce is one of the most used vegtables in North America.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "S9",
+      "id": "ccqoaieufwh8ef7h",
+      "catagory": "seeds",
+      "inventoryOnHand": 5,
+      "images": [
+        "/images/seeds/lettuce.webp"
+      ]
+    },
+    {
+      "name": "Pea's",
+      "description": "Pea's are one of the most used vegtables in North America.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "S10",
+      "id": "gwiogj0e9s8hf8e",
+      "catagory": "seeds",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/seeds/peas.jpeg"
+      ]
+    }
+  ]
+}

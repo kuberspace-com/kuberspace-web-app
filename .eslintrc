@@ -13,7 +13,7 @@
     "import/extensions": 0,
     "import/no-unresolved":0,
     "no-var":"off",
-    "no-console": 2,
+    "no-console": 0,
     "react/prefer-stateless-function":0,
     "no-plusplus":0,
     "react/prop-types":0,
