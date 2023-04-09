@@ -17,6 +17,11 @@ export default function ProductListItem(props: {product: Product}) {
 
   // const {isXs, isSm, isMd, isLg, active} = useBreakpoints();
 
+  // @media screen and (min-width: 1600px) {
+  //   body {
+  //      font-size: 30px;
+  //   }
+  // }
   return (
     <ListItem
       key={props.product.id}
@@ -70,19 +75,19 @@ export default function ProductListItem(props: {product: Product}) {
         }}
       >
         <div className="information" style={{ height: '80%', width: 'auto' }}>
-          <Typography variant="body2" sx={{ fontSize: '14px' }} color="text.secondary">
+          <Typography variant="body2" sx={{ fontSize: '2vw' }} color="text.secondary">
             {props.product.name}
             :
             {' '}
             {props.product.description}
           </Typography>
-          <Typography sx={{ textAlign: 'left', fontSize: '14px' }} variant="body2" color="text.secondary">
+          <Typography sx={{ textAlign: 'left', fontSize: '2vw' }} variant="body2" color="text.secondary">
             {`weight in grams: ${props.product.weightInGrams}`}
           </Typography>
-          <Typography sx={{ textAlign: 'left', fontSize: '14px' }} variant="body2" color="text.secondary">
+          <Typography sx={{ textAlign: 'left', fontSize: '2vw' }} variant="body2" color="text.secondary">
             {`inventory: ${props.product.inventoryOnHand}`}
           </Typography>
-          <Typography sx={{ textAlign: 'left', fontSize: '15px', fontWeight: 800 }} variant="body2">
+          <Typography sx={{ textAlign: 'left', fontSize: '2.2vw', fontWeight: 800 }} variant="body2">
             <span style={{ fontSize: '22px' }}>$</span>
             {' '}
             {props.product.price}
@@ -93,11 +98,11 @@ export default function ProductListItem(props: {product: Product}) {
           padding: 0,
           position: 'absolute',
           bottom: 0,
-          right: 0
+          right: '5%'
         }}
         >
-          <Button sx={{ fontSize: '11px' }} size="small">Share</Button>
-          <Button sx={{ fontSize: '11px' }} size="small">Learn More</Button>
+          <Button sx={{ fontSize: '1.4vw' }} size="small">Share</Button>
+          <Button sx={{ fontSize: '1.4vw' }} size="small">Learn More</Button>
         </CardActions>
       </CardContent>
     </ListItem>
