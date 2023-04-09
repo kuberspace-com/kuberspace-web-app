@@ -43,7 +43,7 @@ function DropDownMenu(props: {
       <Paper sx={{ width: '100%' }}>
         <MenuList>
           <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/', 'home')}> Home </MenuItem>
-          <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/about-us', 'about')}> About </MenuItem>
+          <MenuItem className="dropdown-route" onClick={()=> props.NAVIGATE('/about', 'about')}> About </MenuItem>
           {props.CONTEXT.state.user.loggedIn ? <MenuItem>Logout</MenuItem>
             : <MenuItem className="dropdown-route" onClick={()=> props.CONTEXT.logout()}> Login </MenuItem>}
         </MenuList>
@@ -169,7 +169,7 @@ function Header(_props:{className: string}) {
               tabIndex={0}
             />
             <Tab
-              onClick={()=> { NAVIGATE('/about-us', 'about'); }}
+              onClick={()=> { NAVIGATE('/about', 'about'); }}
               className="hovertab"
               label="about us"
               value="about"

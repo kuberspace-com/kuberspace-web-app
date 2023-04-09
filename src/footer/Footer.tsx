@@ -8,7 +8,7 @@ function Footer() {
         <section className="flex-content padding_1x">
           <h3>Top Products</h3>
           <a href="/"><span>Gold</span></a>
-          <a href="/"><span>Iran</span></a>
+          <a href="/"><span>Iron</span></a>
           <a href="/"><span>Copper</span></a>
           <a href="/"><span>Silver</span></a>
         </section>

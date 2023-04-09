@@ -1,0 +1,251 @@
+{
+  "products": [
+    {
+      "name": "Magnesium",
+      "description": "Magnesium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M1",
+      "id": "fwowfm23fj09f3jf2",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/magnesium.jpg"
+      ]
+    },
+    {
+      "name": "Tungsten",
+      "description": "Tungsten is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M2",
+      "id": "fwoinfewie439294",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/tungsten.png"
+      ]
+    },
+    {
+      "name": "Titanium",
+      "description": "Titanium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M3",
+      "id": "wagergsdfwefaf",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/titanium.jpg"
+      ]
+    },
+    {
+      "name": "Tin",
+      "description": "Tin is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M4",
+      "id": "geagsdfergeg",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/tin.jpg"
+      ]
+    },
+    {
+      "name": "Steel",
+      "description": "Steel is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M5",
+      "id": "eahreh5sdgffew",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/steel.jpg"
+      ]
+    },
+    {
+      "name": "Sodium",
+      "description": "Sodium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M6",
+      "id": "ewonwiecwudwef",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/sodium.jpg"
+      ]
+    },
+    {
+      "name": "Silver",
+      "description": "Sodium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M7",
+      "id": "ve9iwn9483hsef",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/silver.jpg"
+      ]
+    },
+    {
+      "name": "Scandium",
+      "description": "Scandium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M8",
+      "id": "vn3w80f347gfhu",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/scandium.jpeg"
+      ]
+    },
+    {
+      "name": "Potassium",
+      "description": "Potassium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M9",
+      "id": "ccqoaieufwh8ef7h",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/potassium.jpeg"
+      ]
+    },
+    {
+      "name": "Platinum",
+      "description": "Platinum is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M10",
+      "id": "gwiogj0e9s8hf8e",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/platinum.jpeg"
+      ]
+    },
+    {
+      "name": "Nickel",
+      "description": "Nickel is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M11",
+      "id": "asfjw98fwuhef983whe",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/nickel.jpeg"
+      ]
+    },
+    {
+      "name": "Iron",
+      "description": "Iron is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M12",
+      "id": "fqawfh23948fhw9iehfj",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/iron.png"
+      ]
+    },
+    {
+      "name": "Gold",
+      "description": "Gold is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M13",
+      "id": "wfwi9efh9w8ehfu",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/gold.webp"
+      ]
+    },
+    {
+      "name": "Gallium",
+      "description": "Gallium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M14",
+      "id": "fq2i39hfasifhwi3hrf",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/gallium.jpeg"
+      ]
+    },
+    {
+      "name": "Copper",
+      "description": "Copper is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M15",
+      "id": "iuweshf8w2h38fed",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/copper.jpg"
+      ]
+    },
+    {
+      "name": "Cobalt",
+      "description": "Cobalt is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M16",
+      "id": "fn8w7ehfuwhf34t",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/cobalt.jpeg"
+      ]
+    },
+    {
+      "name": "Brass",
+      "description": "Brass is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M17",
+      "id": "geg30we8fhe8hfe2f",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/brass.webp"
+      ]
+    },
+    {
+      "name": "Bismuth",
+      "description": "Bismuth is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M18",
+      "id": "wf9we8hfwiejf2j34",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/bismuth.jpg"
+      ]
+    },
+    {
+      "name": "Barium",
+      "description": "Barium is one of the most used metals on earth.",
+      "price": 19.99,
+      "weightInGrams": 50,
+      "group": "M19",
+      "id": "agj0934jgiehgieg",
+      "catagory": "metals",
+      "inventoryOnHand": 14,
+      "images": [
+        "/images/metals/barium.jpeg"
+      ]
+    }
+  ]
+}

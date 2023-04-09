@@ -2,7 +2,7 @@ import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import React, {
   Dispatch, SetStateAction, useEffect, useState
 } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { redirect, useLocation, useNavigate } from 'react-router-dom';
 import GENERAL_CONTEXT from './GeneralContext';
 
 function GeneralContextProvider(props): ReactJSXElement {
@@ -86,19 +86,19 @@ function GeneralContextProvider(props): ReactJSXElement {
     navigate(url, { replace: true });
   };
 
-  useEffect(()=> {
-    setPage(location.pathname);
-    if (location.pathname === '/') {
-      setComponent('home');
-    }
-  }, [
-    component,
-    page,
-    userId,
-    userPermissions,
-    userAuthToken,
-    loggedIn
-  ]);
+  // useEffect(()=> {
+  //   setPage(location.pathname);
+  //   if (location.pathname === '/') {
+  //     setComponent('home');
+  //   }
+  // }, [
+  //   component,
+  //   page,
+  //   userId,
+  //   userPermissions,
+  //   userAuthToken,
+  //   loggedIn
+  // ]);
 
   return (
     <GENERAL_CONTEXT.Provider value={

@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.scss';
-// import axios from 'axios';
+
 import {
   Button,
   TextField,
   Alert
 } from '@mui/material';
-// import { FormGroup, FormControl } from '@kuberspace/kuberform';
-// import { createCookie, deleteCookie } from '../../utility_functions/cookie';
 
 function Login() {
+  var [state, setState] = useState({
+    username: '',
+    password: ''
+  });
+
   return (
     <main className="login">
       <div className="form-ct">
@@ -31,6 +34,9 @@ function Login() {
                 error
                 size="small"
                 helperText="Username is required"
+                onChange={(e)=> {
+                  setState({ ...state, username: e.target.value });
+                }}
               />
               <TextField
                 sx={{ margin: '15px auto' }}
@@ -40,6 +46,9 @@ function Login() {
                 style={{ width: '100%' }}
                 error
                 helperText="Password is required"
+                onChange={(e)=> {
+                  setState({ ...state, password: e.target.value });
+                }}
               />
               <a href="/forgot-password">Forgot Password?</a>
               <button type="button"> Sign In </button>
