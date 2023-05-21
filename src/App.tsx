@@ -11,6 +11,7 @@ import NotFoundPage from './pages/notFoundPage/NotFoundPage';
 import Metals from './pages/home/subpages/Metals';
 import Seeds from './pages/home/subpages/Seeds';
 import About from './pages/about/About';
+import ProductPage from './pages/productPage/ProductPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             path="/about"
             element={<About />}
           />
+          <Route path="/product-page" element={<ProductPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

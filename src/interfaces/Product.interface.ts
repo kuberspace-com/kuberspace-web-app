@@ -5,7 +5,7 @@ export interface Product {
   inventoryOnHand: number;
   description: string;
   images: Array<string>;
-  weightInGrams: number;
   group: string;
-  id: string;
+  details: {[key: string]: string | number | undefined}
+  id?: string;
 }

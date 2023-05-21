@@ -1,0 +1,33 @@
+.product-details {
+  .title-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .left-container {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid green;
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  .right-container {
+
+  }
+
+  @media (min-width: 640px) and (max-width: 767px) {
+
+  }
+
+  @media (min-width: 768px) and (max-width: 950px) {
+
+  }
+}
