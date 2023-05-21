@@ -6,14 +6,19 @@ import {
   ListItem,
   Typography
 } from '@mui/material';
+import { NavigateOptions, useNavigate } from 'react-router-dom';
 import { onKeyEnter } from '../utilityFunctions/keyEvents';
 import { Product } from '../interfaces/Product.interface';
+import clickExcludeButtons from '../utilityFunctions/clickExcludeButtons';
+import enterExcludeButtons from '../utilityFunctions/enterExcludeButtons';
 // import useBreakpoints from '../hooks/useBreakpoints';
 
 export default function ProductListItem(props: {product: Product}) {
+  const NAVIGATE = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-  function navigateToProductPage(_group: any): void {
-    throw new Error('Function not implemented.');
+  // var options: NavigateOptions = { group };
+  function navigateToProductPage(group: string): void {
+    NAVIGATE('product-page', { state: { group }});
   }
 
   // const {isXs, isSm, isMd, isLg, active} = useBreakpoints();
@@ -23,21 +28,26 @@ export default function ProductListItem(props: {product: Product}) {
   //      font-size: 30px;
   //   }
   // }
+  // clickExcludeButtons(function, classesToExclude, containerClassToExcludeFrom); reusable
+
   return (
     <ListItem
+      className="product-list-item"
       key={props.product.id}
+      tabIndex={0}
+      onClick={()=> clickExcludeButtons('.product-list-item', ()=> navigateToProductPage(props.product.group))}
+      onKeyDown={(e)=> enterExcludeButtons(e, '.product-list-item', ()=> navigateToProductPage(props.product.group))}
       disablePadding
       sx={{
         background: 'black',
         borderBottom: '2px solid green',
-        // paddingBottom: '0px important',
+        cursor: 'pointer',
         '& .MuiCardContent-root, .MuiCardContent-root:last-child': {
           paddingBottom: '0px'
         }
       }}
     >
       <div
-        onClick={()=> navigateToProductPage(props.product.group)}
         tabIndex={0}
         role="button"
         style={{
@@ -68,7 +78,6 @@ export default function ProductListItem(props: {product: Product}) {
         />
       </div>
       <CardContent
-        onClick={()=> navigateToProductPage(props.product.group)}
         sx={{
           width: 'auto',
           boxSizing: 'border-box',
@@ -81,9 +90,6 @@ export default function ProductListItem(props: {product: Product}) {
             :
             {' '}
             {props.product.description}
-          </Typography>
-          <Typography sx={{ textAlign: 'left', fontSize: '2vw' }} variant="body2" color="text.secondary">
-            {`weight in grams: ${props.product.weightInGrams}`}
           </Typography>
           <Typography sx={{ textAlign: 'left', fontSize: '2vw' }} variant="body2" color="text.secondary">
             {`inventory: ${props.product.inventoryOnHand}`}

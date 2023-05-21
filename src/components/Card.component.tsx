@@ -56,9 +56,7 @@ export default function ProductCard(props: {product: Product}) {
         <Typography sx={{ textAlign: 'right' }} gutterBottom variant="h6" component="div">
           {props.product.price}
         </Typography>
-        <Typography sx={{ textAlign: 'right' }} gutterBottom variant="body2" component="div">
-          {`weight in grams: ${props.product.weightInGrams}`}
-        </Typography>
+        {/* make loop of details */}
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>

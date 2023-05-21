@@ -11,7 +11,11 @@
       "inventoryOnHand": 14,
       "images": [
         "/images/seeds/tomato.jpeg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Beets",
@@ -24,7 +28,11 @@
       "inventoryOnHand": 14,
       "images": [
         "/images/seeds/beets.jpeg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Carrot",
@@ -37,7 +45,11 @@
       "inventoryOnHand": 14,
       "images": [
         "/images/seeds/carrot.jpg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Chili Pepper",
@@ -50,7 +62,11 @@
       "inventoryOnHand": 14,
       "images": [
         "/images/seeds/chili-pepper.webp"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Cucumber",
@@ -63,7 +79,11 @@
       "inventoryOnHand": 14,
       "images": [
         "/images/seeds/cucumber.jpg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Eggplant",
@@ -76,7 +96,11 @@
       "inventoryOnHand": 5,
       "images": [
         "/images/seeds/eggplant.jpeg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Kale",
@@ -89,7 +113,11 @@
       "inventoryOnHand": 4,
       "images": [
         "/images/seeds/kale.jpeg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Lavender",
@@ -102,7 +130,11 @@
       "inventoryOnHand": 35,
       "images": [
         "/images/seeds/lavender.webp"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Lettuce",
@@ -115,7 +147,11 @@
       "inventoryOnHand": 5,
       "images": [
         "/images/seeds/lettuce.webp"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     },
     {
       "name": "Pea's",
@@ -128,7 +164,11 @@
       "inventoryOnHand": 14,
       "images": [
         "/images/seeds/peas.jpeg"
-      ]
+      ],
+      "details": {
+        "Weight In Grams": 5,
+        "Average Seed Count": 400
+      }
     }
   ]
 }

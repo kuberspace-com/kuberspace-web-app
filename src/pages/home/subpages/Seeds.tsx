@@ -5,7 +5,7 @@ import productsJson from '../../../assets/json/seeds.json';
 
 function Seeds() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [PRODUCTS, SET_PRODUCTS]: [
+  const [PRODUCTS]: [
     Array<Product>,
     Dispatch<SetStateAction<Array<Product | null>>>
   ] = React.useState(productsJson.products);
